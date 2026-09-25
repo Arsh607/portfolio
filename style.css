@@ -27,7 +27,7 @@ body {
   display: flex;
   width: 100%;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: space-between;
   position: relative;
   color: rgb(233, 239, 240);
@@ -124,7 +124,7 @@ html {
   gap: 50px;
   scroll-margin-top: 70px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 80px;
   opacity: 0;
   transform: translateY(100px);
@@ -173,7 +173,7 @@ html {
 
 .calculator {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   padding: 80px;
   margin: 0;
   justify-content: center;
@@ -288,6 +288,7 @@ html {
   gap: 80px;
 
   color: rgb(11, 11, 92);
+  position: relative;
 }
 
 .taskops-preview {
@@ -298,6 +299,10 @@ html {
   flex-shrink: 0;
 }
 
+.taskops-link {
+  margin-top: 10px;
+  color: rgb(11, 11, 92);
+}
 .taskops-photo {
   width: 500px;
   height: auto;
@@ -321,3 +326,320 @@ html {
   margin-top: 40px;
 }
 
+.scroll-arrow-4 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 70px;
+  height: 70px;
+
+  border: 2px solid rgb(11, 11, 92);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(11, 11, 92);
+  font-size: 45px;
+  font-weight: 200;
+
+  text-decoration: none;
+
+  transition: transform 0.3s ease,
+              background-color 0.3s ease;
+
+}
+
+.scroll-arrow-4:hover {
+  transform: translateX(-50%) translateY(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pixell-river {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(11, 11, 92);
+  padding: 80px;
+  margin: 0;
+  gap: 80px;
+  color: white;
+  min-height: 100vh;
+}
+
+.pixell-river-photo {
+  width: 500px;
+  height: auto;
+  border: 2px solid white;
+}
+
+.pixell-river-description h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.pixell-river-description p {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+.pixell-river-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixell-river-link {
+  margin-top: 10px;
+  color: white;
+}
+
+.pixell-river-preview, 
+.pixell-river-description { 
+  opacity: 0; 
+  transform: translateY(100px);
+
+  transition: opacity 0.8s ease, 
+              transform 0.8s ease; 
+}
+
+.pixell-river.show .pixell-river-preview,
+.pixell-river.show .pixell-river-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   TABLETS
+   ========================= */
+
+@media (max-width: 1024px) {
+
+  /* HERO */
+
+  .hero {
+    min-height: 100vh;
+    height: auto;
+
+    padding: 60px 40px 120px;
+
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about {
+    width: 60%;
+  }
+
+  .about h1 {
+    transform: none;
+    font-size: 40px;
+  }
+
+  .about p {
+    transform: none;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .profile-photo {
+    width: 300px;
+    height: 300px;
+
+    transform: none;
+  }
+
+
+  /* PROJECT SECTIONS */
+
+  .inventory,
+  .calculator,
+  .taskops,
+  .pixell-river {
+    min-height: 100vh;
+    height: auto;
+
+    padding: 60px 40px 120px;
+    gap: 40px;
+  }
+
+
+  /* PROJECT IMAGES */
+
+  .inventory-management-photo,
+  .calculator-photo,
+  .taskops-photo,
+  .pixell-river-photo {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* HEADINGS */
+
+  .inventory-description h1,
+  .calculator-description h1,
+  .taskops-description h1,
+  .pixell-river-description h1 {
+    font-size: 40px;
+  }
+
+
+  /* PARAGRAPHS */
+
+  .inventory-description p,
+  .calculator-description p,
+  .taskops-description p,
+  .pixell-river-description p {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   PHONES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .hero {
+    flex-direction: column;
+
+    min-height: 100vh;
+    height: auto;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 40px 20px 120px;
+    gap: 40px;
+
+    text-align: center;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .about h1 {
+    transform: none;
+
+    font-size: 36px;
+    margin: 0 0 30px;
+  }
+
+  .about p {
+    transform: none;
+
+    font-size: 18px;
+    line-height: 1.5;
+
+    margin: 0;
+  }
+
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+
+    transform: none;
+  }
+
+
+  /* ALL PROJECT SECTIONS */
+
+  .inventory,
+  .calculator,
+  .taskops,
+  .pixell-river {
+    flex-direction: column;
+
+    width: 100%;
+
+    min-height: 100vh;
+    height: auto;
+
+    padding: 60px 20px 120px;
+
+    gap: 40px;
+
+    text-align: center;
+  }
+
+
+  /* PROJECT IMAGES */
+
+  .inventory-management-photo,
+  .calculator-photo,
+  .taskops-photo,
+  .pixell-river-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+
+
+  /* PREVIEW CONTAINERS */
+
+  .inventory-preview,
+  .calculator-preview,
+  .taskops-preview,
+  .pixell-river-preview {
+    width: 100%;
+  }
+
+
+  /* DESCRIPTION CONTAINERS */
+
+  .inventory-description,
+  .calculator-description,
+  .taskops-description,
+  .pixell-river-description {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  /* HEADINGS */
+
+  .inventory-description h1,
+  .calculator-description h1,
+  .taskops-description h1,
+  .pixell-river-description h1 {
+    font-size: 36px;
+  }
+
+
+  /* PARAGRAPHS */
+
+  .inventory-description p,
+  .calculator-description p,
+  .taskops-description p,
+  .pixell-river-description p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+
+  /* ARROWS */
+
+  .scroll-arrow,
+  .scroll-arrow-2,
+  .scroll-arrow-3,
+  .scroll-arrow-4 {
+    width: 55px;
+    height: 55px;
+
+    font-size: 35px;
+
+    bottom: 20px;
+  }
+}
