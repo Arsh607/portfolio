@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll(
-  ".inventory, .calculator, .taskops, .pixell-river"
+  ".inventory, .calculator, .taskops, .pixell-river, .jobtrack"
 );
 
 const observer = new IntersectionObserver(
@@ -17,7 +17,7 @@ const observer = new IntersectionObserver(
 
   },
   {
-    threshold: 0.25
+    threshold: 0.2
   }
 );
 

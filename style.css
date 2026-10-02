@@ -369,6 +369,7 @@ html {
   gap: 80px;
   color: white;
   min-height: 100vh;
+  position: relative;
 }
 
 .pixell-river-photo {
@@ -634,7 +635,8 @@ html {
   .scroll-arrow,
   .scroll-arrow-2,
   .scroll-arrow-3,
-  .scroll-arrow-4 {
+  .scroll-arrow-4,
+  .scroll-arrow-5 {
     width: 55px;
     height: 55px;
 
@@ -642,4 +644,651 @@ html {
 
     bottom: 20px;
   }
+}
+
+/* ========================================
+   JOBTRACK SECTION
+   ======================================== */
+
+.jobtrack {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 80px;
+  padding: 80px 80px 120px;
+
+  background-color: rgb(233, 239, 240);
+  color: rgb(11, 11, 92);
+
+  position: relative;
+}
+
+
+/* ========================================
+   JOBTRACK DESCRIPTION
+   ======================================== */
+
+.jobtrack-description {
+  flex: 1;
+  min-width: 0;
+
+  opacity: 0;
+  transform: translateY(100px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.jobtrack-description h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.jobtrack-description p {
+  font-size: 25px;
+  line-height: 1.5;
+  margin-top: 40px;
+}
+
+
+/* ========================================
+   DEVELOPMENT STATUS
+   ======================================== */
+
+.status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+
+  background-color: #4caf50;
+  border-radius: 50%;
+
+  animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+
+/* ========================================
+   JOBTRACK PREVIEW
+   ======================================== */
+
+.jobtrack-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  opacity: 0;
+  transform: translateY(100px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+/* Scroll animation */
+
+.jobtrack.show .jobtrack-description,
+.jobtrack.show .jobtrack-preview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   CONSTRUCTION CARD
+   ======================================== */
+
+.construction-card {
+  width: 500px;
+
+  padding: 40px;
+
+  background-color: white;
+
+  border: 2px solid rgb(11, 11, 92);
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.construction-card h2 {
+  font-size: 35px;
+  margin: 0;
+}
+
+.construction-card h3 {
+  font-size: 22px;
+
+  margin-top: 20px;
+  margin-bottom: 0;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+/* ========================================
+   CONSTRUCTION ANIMATION AREA
+   ======================================== */
+
+.construction-animation {
+  width: 100%;
+  height: 230px;
+
+  position: relative;
+
+  margin: 30px 0 20px;
+
+  overflow: hidden;
+}
+
+
+/* ========================================
+   CRANE
+   ======================================== */
+
+.crane {
+  position: absolute;
+
+  top: 20px;
+  left: 35px;
+
+  width: 260px;
+  height: 190px;
+}
+
+
+/* Horizontal crane arm */
+
+.crane-arm {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 250px;
+  height: 8px;
+
+  background-color: #f4b400;
+
+  border-radius: 4px;
+}
+
+
+/* Vertical crane tower */
+
+.crane-arm::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 25px;
+
+  width: 8px;
+  height: 170px;
+
+  background-color: #f4b400;
+}
+
+
+/* Crane base */
+
+.crane-arm::after {
+  content: "";
+
+  position: absolute;
+
+  top: 165px;
+  left: 0;
+
+  width: 60px;
+  height: 8px;
+
+  background-color: #f4b400;
+
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   CRANE CABLE
+   ======================================== */
+
+.crane-cable {
+  position: absolute;
+
+  top: 8px;
+  left: 180px;
+
+  width: 2px;
+  height: 75px;
+
+  background-color: #333;
+
+  transform-origin: top;
+
+  animation: cableMove 3s ease-in-out infinite;
+}
+
+@keyframes cableMove {
+
+  0%,
+  100% {
+    height: 75px;
+  }
+
+  50% {
+    height: 110px;
+  }
+}
+
+
+/* ========================================
+   JOBTRACK BLOCK
+   ======================================== */
+
+.construction-box {
+  position: absolute;
+
+  top: 83px;
+  left: 145px;
+
+  width: 72px;
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(11, 11, 92);
+  color: white;
+
+  border-radius: 6px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.2);
+
+  animation: boxMove 3s ease-in-out infinite;
+}
+
+@keyframes boxMove {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(35px);
+  }
+}
+
+
+/* ========================================
+   CONSTRUCTION SIGN
+   ======================================== */
+
+.construction-sign {
+  position: absolute;
+
+  right: 35px;
+  bottom: 20px;
+
+  font-size: 50px;
+
+  animation: signBounce 2s ease-in-out infinite;
+}
+
+@keyframes signBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* ========================================
+   PROGRESS INFORMATION
+   ======================================== */
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* ========================================
+   PROGRESS BAR
+   ======================================== */
+
+.progress-bar {
+  width: 100%;
+  height: 14px;
+
+  background-color: #ddd;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 35%;
+  height: 100%;
+
+  background-color: rgb(11, 11, 92);
+
+  border-radius: 20px;
+
+  animation: loadProgress 1.8s ease;
+}
+
+@keyframes loadProgress {
+
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 35%;
+  }
+}
+
+
+/* ========================================
+   CURRENT WORK MESSAGE
+   ======================================== */
+
+.current-work {
+  margin-top: 18px;
+
+  font-size: 15px;
+
+  color: #555;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 1024px) {
+
+  .jobtrack {
+    gap: 40px;
+
+    padding:
+      60px 40px 120px;
+  }
+
+  .jobtrack-description h1 {
+    font-size: 40px;
+  }
+
+  .jobtrack-description p {
+    font-size: 20px;
+  }
+
+  .construction-card {
+    width: 420px;
+    padding: 30px;
+  }
+
+  .crane {
+    left: 15px;
+  }
+
+  .construction-sign {
+    right: 20px;
+  }
+}
+
+
+/* ========================================
+   PHONE
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  .jobtrack {
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+
+    gap: 40px;
+
+    padding:
+      60px 20px 100px;
+
+    text-align: center;
+  }
+
+
+  /* DESCRIPTION */
+
+  .jobtrack-description {
+    width: 100%;
+  }
+
+  .jobtrack-description h1 {
+    font-size: 36px;
+  }
+
+  .jobtrack-description p {
+    font-size: 18px;
+    line-height: 1.5;
+
+    margin-top: 25px;
+  }
+
+
+  /* STATUS */
+
+  .status {
+    justify-content: center;
+
+    font-size: 16px;
+  }
+
+
+  /* PREVIEW */
+
+  .jobtrack-preview {
+    width: 100%;
+  }
+
+
+  /* CARD */
+
+  .construction-card {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 25px 20px;
+  }
+
+  .construction-card h2 {
+    font-size: 30px;
+  }
+
+  .construction-card h3 {
+    font-size: 18px;
+  }
+
+
+  /* CONSTRUCTION AREA */
+
+  .construction-animation {
+    height: 210px;
+  }
+
+
+  /* CRANE */
+
+  .crane {
+    left: 50%;
+
+    width: 230px;
+
+    transform: translateX(-60%);
+  }
+
+  .crane-arm {
+    width: 220px;
+  }
+
+  .crane-cable {
+    left: 155px;
+  }
+
+  .construction-box {
+    left: 120px;
+  }
+
+
+  /* CONSTRUCTION SIGN */
+
+  .construction-sign {
+    right: 10px;
+
+    font-size: 40px;
+  }
+
+
+  /* PROGRESS */
+
+  .progress-info {
+    font-size: 14px;
+  }
+
+  .current-work {
+    font-size: 14px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+   ======================================== */
+
+@media (max-width: 480px) {
+
+  .jobtrack {
+    padding:
+      50px 15px 100px;
+  }
+
+  .jobtrack-description h1 {
+    font-size: 32px;
+  }
+
+  .construction-card {
+    padding:
+      25px 15px;
+  }
+
+  .construction-animation {
+    height: 200px;
+  }
+
+  .crane {
+    transform:
+      translateX(-65%)
+      scale(0.85);
+  }
+
+  .construction-sign {
+    right: 5px;
+
+    font-size: 35px;
+  }
+
+  .progress-info {
+    gap: 10px;
+  }
+}
+
+.scroll-arrow-5 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 70px;
+  height: 70px;
+
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-size: 45px;
+  font-weight: 200;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.scroll-arrow-5:hover {
+  transform: translateX(-50%) translateY(5px);
+  background-color: rgba(255, 255, 255, 0.1);
 }
